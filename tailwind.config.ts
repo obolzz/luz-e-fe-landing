@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// Custom colors for the landing page
+				divine: {
+					white: '#FFFFFF',
+					gold: '#FFD700',
+					darkGray: '#333333',
+					red: '#8B0000',
+					blue: '#75A7F0',
 				}
 			},
 			borderRadius: {
@@ -84,11 +93,38 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'count-up': {
+					'0%': { content: '"800"' },
+					'25%': { content: '"815"' },
+					'50%': { content: '"830"' },
+					'75%': { content: '"840"' },
+					'100%': { content: '"847"' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' },
+				},
+				'pulse-soft': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.7' },
+				},
+				'shine': {
+					'0%': { backgroundPosition: '200% 0' },
+					'100%': { backgroundPosition: '-200% 0' },
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 6s ease-in-out infinite',
+				'pulse-soft': 'pulse-soft 3s ease-in-out infinite',
+				'shine': 'shine 3s linear infinite',
+				'count-up': 'count-up 3s ease-out'
+			},
+			backgroundImage: {
+				'gradient-gold': 'linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%)',
+				'gradient-red': 'linear-gradient(90deg, hsla(22, 100%, 78%, 1) 0%, hsla(2, 78%, 62%, 1) 100%)'
 			}
 		}
 	},
