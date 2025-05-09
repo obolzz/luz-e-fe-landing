@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Bird } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 import divineLight from '../assets/divine-light.jpg';
 
 const HeroSection = () => {
@@ -24,7 +24,10 @@ const HeroSection = () => {
       </div>
       
       <div className="absolute top-10 animate-float">
-        <Bird className="h-16 w-16 text-white opacity-90" />
+        <div className="relative">
+          <div className="text-white text-6xl">✝</div>
+          <div className="absolute inset-0 text-divine-gold text-6xl animate-pulse-soft">✝</div>
+        </div>
       </div>
       
       <div className="max-w-3xl mx-auto z-10">
@@ -37,27 +40,14 @@ const HeroSection = () => {
         
         <a 
           href="https://pay.cakto.com.br/nmr3rpd_296397" 
-          className="divine-cta inline-block mt-8 mb-12 w-full sm:w-auto relative overflow-hidden group"
+          className="divine-cta inline-block mt-8 mb-12 w-full sm:w-auto relative overflow-hidden group transform transition-transform duration-300 hover:scale-105 text-center"
         >
           <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-divine-gold/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></span>
           Quero receber minha Revelação Divina
         </a>
         
         <div className="arrow-down animate-bounce mt-12">
-          <svg 
-            className="w-8 h-8 mx-auto text-white"
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24" 
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              strokeWidth={2} 
-              d="M19 14l-7 7m0 0l-7-7m7 7V3" 
-            />
-          </svg>
+          <ArrowDown className="w-8 h-8 mx-auto text-white" />
         </div>
       </div>
     </section>

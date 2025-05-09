@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { Star } from 'lucide-react';
+import { Star, ArrowRight } from 'lucide-react';
 
 const testimonials = [
   {
@@ -153,6 +153,16 @@ const ProofSection = () => {
               aria-label={`Page ${index + 1}`}
             />
           ))}
+        </div>
+        
+        <div className="mt-12 text-center">
+          <a 
+            href="https://pay.cakto.com.br/nmr3rpd_296397" 
+            className="inline-flex items-center justify-center gap-2 bg-divine-red text-white font-bold py-4 px-8 rounded-lg shadow-lg hover:scale-105 transition-all duration-300 text-xl"
+          >
+            Quero transformar minha vida agora
+            <ArrowRight className="ml-2 h-5 w-5 animate-pulse" />
+          </a>
         </div>
       </div>
     </section>

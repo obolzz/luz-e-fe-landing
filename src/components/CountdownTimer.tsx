@@ -24,11 +24,11 @@ const CountdownTimer = () => {
     <div className="timer-text flex items-center">
       Oferta válida por{' '}
       <div className="flex items-center ml-1">
-        <div className="flex items-center justify-center bg-divine-red text-white font-mono rounded px-1 mx-0.5 min-w-[26px]">
+        <div className="flex items-center justify-center bg-divine-red text-white font-mono font-bold rounded px-2 mx-0.5 min-w-[28px] shadow-inner">
           {String(minutes).padStart(2, '0')}
         </div>
-        <span className="mx-0.5 animate-pulse">:</span>
-        <div className="flex items-center justify-center bg-divine-red text-white font-mono rounded px-1 mx-0.5 min-w-[26px]">
+        <span className="mx-0.5 animate-pulse font-bold">:</span>
+        <div className="flex items-center justify-center bg-divine-red text-white font-mono font-bold rounded px-2 mx-0.5 min-w-[28px] shadow-inner">
           {String(seconds).padStart(2, '0')}
         </div>
       </div>
