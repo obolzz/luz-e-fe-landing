@@ -21,11 +21,17 @@ const CountdownTimer = () => {
   }, [minutes, seconds]);
   
   return (
-    <div className="timer-text">
+    <div className="timer-text flex items-center">
       Oferta válida por{' '}
-      <span className="text-divine-red font-bold">
-        {String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}
-      </span>
+      <div className="flex items-center ml-1">
+        <div className="flex items-center justify-center bg-divine-red text-white font-mono rounded px-1 mx-0.5 min-w-[26px]">
+          {String(minutes).padStart(2, '0')}
+        </div>
+        <span className="mx-0.5 animate-pulse">:</span>
+        <div className="flex items-center justify-center bg-divine-red text-white font-mono rounded px-1 mx-0.5 min-w-[26px]">
+          {String(seconds).padStart(2, '0')}
+        </div>
+      </div>
     </div>
   );
 };

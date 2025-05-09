@@ -14,11 +14,13 @@ const GuaranteeSection = () => {
         </div>
         
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
-          Garantia Incondicional: 7 dias para se arrepender<br />
-          <span className="text-divine-red italic">mas você não vai querer</span>
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-divine-red to-divine-gold">
+            Garantia Incondicional: 7 dias para se arrepender
+          </span><br />
+          <span className="text-divine-red italic block mt-2 animate-pulse-soft">mas você não vai querer</span>
         </h2>
         
-        <div className="max-w-3xl mx-auto mb-8 bg-white/40 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-divine-gold/30">
+        <div className="max-w-3xl mx-auto mb-8 bg-white/40 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-divine-gold/30 hover:shadow-2xl transition-shadow duration-300">
           <p className="text-lg md:text-xl">
             Se não ficar satisfeito, devolvemos seu investimento. Sem perguntas. 
             Apenas a paz que você busca. Ele já te chamou... agora é a sua vez 
@@ -30,7 +32,7 @@ const GuaranteeSection = () => {
           <div className="w-24 h-1 bg-divine-gold rounded"></div>
         </div>
         
-        <p className="verse text-3xl text-divine-darkGray italic">
+        <p className="verse text-3xl text-divine-darkGray italic font-bold tracking-wide">
           "Fé é a certeza daquilo que esperamos e a prova das coisas que não vemos."
         </p>
       </div>

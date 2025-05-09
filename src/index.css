@@ -108,6 +108,8 @@
 
   .verse {
     font-family: 'Dancing Script', cursive;
+    @apply text-2xl md:text-3xl font-bold;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
   }
   
   .gold-shimmer {
@@ -122,7 +124,7 @@
   }
   
   .timer-text {
-    @apply font-bold text-xl text-divine-red;
+    @apply font-bold text-xl;
   }
   
   .floating {
@@ -143,6 +145,10 @@
     background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.4), transparent);
     transition: 0.5s;
     animation: shine 3s linear infinite;
+  }
+  
+  .animated-text {
+    animation: pulse 2s infinite;
   }
 }
 
@@ -172,6 +178,11 @@
   }
 }
 
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; transform: scale(0.98); }
+}
+
 @layer utilities {
   .animate-float {
     animation: float 6s ease-in-out infinite;
@@ -187,5 +198,9 @@
   
   .animate-fade-in {
     animation: fade-in 0.5s ease-out forwards;
+  }
+  
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 }

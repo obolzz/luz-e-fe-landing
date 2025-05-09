@@ -8,8 +8,8 @@ const FloatingTimer = () => {
   
   useEffect(() => {
     const handleScroll = () => {
-      // Show floating timer after scrolling past 300px instead of 500px
-      if (window.scrollY > 300) {
+      // Show floating timer after scrolling past 200px
+      if (window.scrollY > 200) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
@@ -26,12 +26,13 @@ const FloatingTimer = () => {
     <div className="fixed top-4 left-0 right-0 z-50 flex justify-center">
       <div className="flex items-center gap-4 bg-white py-2 px-6 rounded-full shadow-xl border-2 border-divine-gold animate-fade-in">
         <div className="flex items-center">
-          <Clock className="text-divine-red mr-2 h-5 w-5" />
+          <Clock className="text-divine-red mr-2 h-5 w-5 animate-pulse" />
           <CountdownTimer />
         </div>
+        <div className="h-10 w-px bg-gray-200 mx-2"></div>
         <a 
           href="https://pay.cakto.com.br/nmr3rpd_296397" 
-          className="flex items-center text-sm bg-divine-red hover:bg-divine-gold text-white hover:text-divine-darkGray py-2 px-4 rounded-full hover:scale-105 transition-all duration-300"
+          className="flex items-center text-sm bg-divine-red hover:bg-divine-gold text-white hover:text-divine-darkGray py-2 px-4 rounded-full transition-all duration-300 hover:scale-105 shadow-md"
         >
           <CircleDollarSign className="mr-1 h-4 w-4" />
           <span>Quero agora!</span>
