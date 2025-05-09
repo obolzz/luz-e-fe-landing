@@ -51,10 +51,12 @@ const testimonials = [
 const ProofSection = () => {
   const [page, setPage] = useState(0);
   const [count, setCount] = useState(800);
+  const targetCount = 847;
   
   const testimonialsPerPage = 3;
   const totalPages = Math.ceil(testimonials.length / testimonialsPerPage);
   
+  // Change testimonials carousel
   useEffect(() => {
     const intervalId = setInterval(() => {
       setPage((prev) => (prev + 1) % totalPages);
@@ -63,22 +65,26 @@ const ProofSection = () => {
     return () => clearInterval(intervalId);
   }, [totalPages]);
 
+  // Counter animation
   useEffect(() => {
-    // Animate count from 800 to 847
-    let start = 800;
-    const end = 847;
-    const duration = 3000;
-    const increment = Math.floor((end - start) / (duration / 50));
+    // Reset counter when component mounts or when user revisits
+    setCount(800);
+    
+    const duration = 3000; // 3 seconds for the animation
+    const framesPerSecond = 30;
+    const incrementsPerFrame = (targetCount - 800) / (duration / 1000 * framesPerSecond);
+    let currentCount = 800;
     
     const timer = setInterval(() => {
-      start += increment;
-      if (start >= end) {
+      currentCount += incrementsPerFrame;
+      
+      if (currentCount >= targetCount) {
         clearInterval(timer);
-        setCount(end);
+        setCount(targetCount);
       } else {
-        setCount(start);
+        setCount(Math.floor(currentCount));
       }
-    }, 50);
+    }, 1000 / framesPerSecond);
     
     return () => clearInterval(timer);
   }, []);
@@ -111,7 +117,7 @@ const ProofSection = () => {
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Mais de <span className="text-divine-red">{count}</span> vidas transformadas.
+            Mais de <span className="text-divine-red text-5xl font-bold animate-pulse">{count}</span> vidas transformadas.
           </h2>
           <p className="text-xl md:text-2xl">Veja o que elas têm a dizer:</p>
         </div>

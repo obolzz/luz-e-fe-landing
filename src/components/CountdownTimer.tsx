@@ -1,7 +1,16 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, createContext, useContext } from 'react';
 
-const CountdownTimer = () => {
+// Create context to share timer state
+const TimerContext = createContext<{
+  minutes: number;
+  seconds: number;
+}>({
+  minutes: 4,
+  seconds: 59
+});
+
+export const TimerProvider = ({ children }: { children: React.ReactNode }) => {
   const [minutes, setMinutes] = useState(4);
   const [seconds, setSeconds] = useState(59);
   
@@ -19,6 +28,18 @@ const CountdownTimer = () => {
     
     return () => clearInterval(countdown);
   }, [minutes, seconds]);
+  
+  return (
+    <TimerContext.Provider value={{ minutes, seconds }}>
+      {children}
+    </TimerContext.Provider>
+  );
+};
+
+export const useTimer = () => useContext(TimerContext);
+
+const CountdownTimer = () => {
+  const { minutes, seconds } = useTimer();
   
   return (
     <div className="timer-text flex items-center">

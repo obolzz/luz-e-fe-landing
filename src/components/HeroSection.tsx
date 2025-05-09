@@ -1,14 +1,13 @@
 
 import React from 'react';
 import { ArrowDown } from 'lucide-react';
-import divineLight from '../assets/divine-light.jpg';
 
 const HeroSection = () => {
   return (
     <section 
       className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 py-16 md:py-32 overflow-hidden"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?q=80&w=2600&auto=format&fit=crop)`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80)`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -25,15 +24,17 @@ const HeroSection = () => {
       
       <div className="absolute top-10 animate-float">
         <div className="relative">
-          <div className="text-white text-6xl">✝</div>
-          <div className="absolute inset-0 text-divine-gold text-6xl animate-pulse-soft">✝</div>
+          <div className="cross-container animate-spin-slow">
+            <div className="text-white text-6xl">✝</div>
+            <div className="absolute inset-0 text-divine-gold text-6xl animate-pulse-soft">✝</div>
+          </div>
         </div>
       </div>
       
       <div className="max-w-3xl mx-auto z-10">
         <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-8 drop-shadow-lg">
           Deus não erra.<br />
-          <span className="block mt-2">Se você está aqui, é porque Ele te chamou.</span>
+          <span className="block mt-2">Se você está aqui, é porque Ele <span className="text-divine-red animate-pulse">te chamou</span>.</span>
         </h1>
         
         <div className="mb-8 w-24 h-1 bg-divine-gold mx-auto rounded"></div>

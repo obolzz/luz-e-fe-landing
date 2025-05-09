@@ -29,14 +29,6 @@ const FloatingTimer = () => {
           <Clock className="text-divine-red mr-2 h-5 w-5 animate-pulse" />
           <CountdownTimer />
         </div>
-        <div className="h-10 w-px bg-gray-200 mx-2"></div>
-        <a 
-          href="https://pay.cakto.com.br/nmr3rpd_296397" 
-          className="flex items-center text-sm bg-divine-red hover:bg-divine-gold text-white hover:text-divine-darkGray py-2 px-4 rounded-full transition-all duration-300 hover:scale-105 shadow-md font-bold"
-        >
-          <CircleDollarSign className="mr-1 h-4 w-4" />
-          <span>Quero agora!</span>
-        </a>
       </div>
     </div>
   );
