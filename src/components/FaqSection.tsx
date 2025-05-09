@@ -1,5 +1,7 @@
 
 import React from 'react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { CircleDollarSign } from 'lucide-react';
 
 const faqs = [
   {
@@ -31,29 +33,36 @@ const faqs = [
 
 const FaqSection = () => {
   return (
-    <section className="py-16 px-4 bg-gray-50">
+    <section className="py-16 px-4 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Dúvidas Frequentes</h2>
+          <div className="w-24 h-1 bg-divine-gold mx-auto mb-6"></div>
         </div>
         
-        <div className="space-y-6">
+        <Accordion type="single" collapsible className="space-y-4">
           {faqs.map((faq) => (
-            <div 
+            <AccordionItem 
               key={faq.id} 
-              className="bg-white p-6 rounded-lg shadow-md border-l-4 border-divine-gold"
+              value={`item-${faq.id}`}
+              className="bg-white p-1 rounded-lg shadow-md border-l-4 border-divine-gold overflow-hidden transition-all duration-300 hover:shadow-lg"
             >
-              <h3 className="text-xl font-bold mb-2">{faq.question}</h3>
-              <p>{faq.answer}</p>
-            </div>
+              <AccordionTrigger className="px-5 py-4 text-xl font-bold">
+                {faq.question}
+              </AccordionTrigger>
+              <AccordionContent className="px-5 py-4 text-lg">
+                {faq.answer}
+              </AccordionContent>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
         
         <div className="mt-12 text-center">
           <a 
             href="https://pay.cakto.com.br/nmr3rpd_296397" 
-            className="divine-cta"
+            className="divine-cta group flex items-center justify-center mx-auto"
           >
+            <CircleDollarSign className="mr-2 h-5 w-5 group-hover:animate-pulse" />
             Estou pronto para minha Revelação Divina
           </a>
         </div>

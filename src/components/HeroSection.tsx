@@ -1,14 +1,14 @@
 
 import React from 'react';
 import { Bird } from 'lucide-react';
-import BackgroundImage from '../assets/divine-light.jpg';
+import divineLight from '../assets/divine-light.jpg';
 
 const HeroSection = () => {
   return (
     <section 
       className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 py-16 md:py-32 overflow-hidden"
       style={{
-        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1523712999610-f77fbcfc3843')`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${divineLight})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -19,7 +19,7 @@ const HeroSection = () => {
       </div>
       
       <div className="max-w-3xl mx-auto z-10">
-        <h1 className="text-divine-blue text-4xl md:text-5xl lg:text-6xl font-bold mb-8 drop-shadow-lg">
+        <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-8 drop-shadow-lg">
           Deus não erra.<br />
           <span className="block mt-2">Se você está aqui, é porque Ele te chamou.</span>
         </h1>
